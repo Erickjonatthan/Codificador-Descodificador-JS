@@ -10,10 +10,14 @@ background: #F3F5FC;
 
 }
 
-div#box_submit .planoFundo{
+div.box_submit .planoFundo{
 
 margin-top: 50%;
 
+}
+.remover {
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
 }
 .titulo{
 
@@ -27,7 +31,7 @@ div#container {
   justify-content: space-between;
 }
 
-div#box_input {
+div.box_input {
   padding: 10px;
   border-radius: 5px;
   width:400px;
@@ -35,7 +39,7 @@ div#box_input {
   margin: 40px auto;
 }
 
-div#box_submit {
+div.box_submit {
   text-align: center;
   background: #FFFFFF;
   box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
@@ -43,9 +47,13 @@ div#box_submit {
   width: 400px;
   height: 650px;
 }
+div.box_submit .exibe_texto{
+   color: #0A3871;
+   font-size: 40px;
+   text-align: center;
+}
 
-
-div#box_input .design_input {
+div.box_input .design_input {
   background-color: transparent;
   border: none; 
   width: 100%; 
@@ -60,7 +68,7 @@ div#box_input .design_input {
   color: #0A3871;
   font-size: 40px; /* Define o tamanho da fonte do placeholder como 20 pixels */
 }
-div#box_input .btn_codificar{
+div.box_input .btn_codificar{
   background: #0A3871;
   border-radius: 24px;
   width: 328px;
@@ -68,11 +76,10 @@ div#box_input .btn_codificar{
   
   
 }
-div#box_input .btn_descodificar{
+div.box_input .btn_descodificar{
   width: 328px;
   height: 67px;
   background: #D8DFE8;
-  
   border-radius: 24px;
   
   

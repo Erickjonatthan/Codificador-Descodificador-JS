@@ -1,3 +1,15 @@
+function exibe(frase){
+
+    var elementoTexto = document.querySelector("div.box_submit .exibe_texto");
+    var elementoImagem = document.querySelector("div.box_submit .planoFundo");
+    if (elementoImagem && input.value) {
+        elementoImagem.remove();
+    }
+  
+    elementoTexto.textContent = frase;
+   
+}
+
 function codificar(){
     var caracteres = input.value.split("");
     var novaFrase = ""
@@ -26,49 +38,23 @@ function codificar(){
 
 
     }
-    console.log(novaFrase)
-    return novaFrase;
-}
-
-function descodificar() {
-    var novaFrase = "";
-    var i = 0;
-    while (i < input.value.length) {
-
-        if (input.value.indexOf("ai", i) == i) {
-            novaFrase += "a";
-            i += 2;
-        } 
-        else if (input.value.slice(i, i + 5) == "enter") {
-            novaFrase += "e";
-            i += 5;
-        } 
-        else if (input.value.slice(i, i + 4) == "imes") {
-            novaFrase += "i";
-            i += 4;
-        }
-        else if (input.value.slice(i, i + 4) == "ober") {
-            novaFrase += "o";
-            i += 4;
-        }
-        else if (input.value.slice(i, i + 4) == "ufat") {
-            novaFrase += "u";
-            i += 4;
-        }
-         else {
-            novaFrase += input.value[i];
-            i++;
-        }
-    }
-    console.log(novaFrase)
-    return novaFrase;
-
+    
+    exibe(novaFrase)
     
 }
+function descodificar() {
+    var novaFrase = input.value.replace(/ai/g, "a")
+        .replace(/enter/g, "e")
+        .replace(/imes/g, "i")
+        .replace(/ober/g, "o")
+        .replace(/ufat/g, "u");
+    exibe(novaFrase)
+   
+}
 
-var input = document.querySelector("div#box_input input");
 
-var buttonCodifica = document.querySelector("div#box_input button.btn_codificar");
+var input = document.querySelector("div.box_input input");
+var buttonCodifica = document.querySelector("div.box_input button.btn_codificar");
 buttonCodifica.onclick = codificar;
-var buttonDescodifica = document.querySelector("div#box_input button.btn_descodificar");
+var buttonDescodifica = document.querySelector("div.box_input button.btn_descodificar");
 buttonDescodifica.onclick = descodificar;
