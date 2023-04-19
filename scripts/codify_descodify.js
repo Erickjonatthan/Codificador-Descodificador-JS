@@ -1,3 +1,9 @@
+function verificaTextArea() {
+    buttonCodifica.disabled = textarea.value.trim() === "";
+    buttonDescodifica.disabled = textarea.value.trim() === "";
+}
+
+
 function verificaPlanoFundo(){
     if (elementoImagem) {
         elementoCopiar.remove()
@@ -40,10 +46,10 @@ function exibe(frase) {
 
 
 function codificar() {
-    var caracteres = textarea.value.split("");
-    var novaFrase = ""
+    let caracteres = textarea.value.split("");
+    let novaFrase = ""
 
-    for (var i = 0; i < caracteres.length; i++) {
+    for (let i = 0; i < caracteres.length; i++) {
 
         if (caracteres[i] == 'a') {
             novaFrase += "ai";
@@ -76,7 +82,7 @@ function descodificar() {
     
 
     
-    var novaFrase = textarea.value.replace(/ai/g, "a")
+    let novaFrase = textarea.value.replace(/ai/g, "a")
         .replace(/enter/g, "e")
         .replace(/imes/g, "i")
         .replace(/ober/g, "o")
@@ -96,22 +102,12 @@ const buttonCodifica = document.querySelector("div.box_input button.btn_codifica
 const buttonDescodifica = document.querySelector("div.box_input button.btn_descodificar");
 const elementoCopiar = document.querySelector("div.box_submit .btn_copiar");
 const elementoImagem = document.querySelector("div.box_submit .planoFundo");
-const arrow = document.querySelector('.scroll-to-bottom');
-
-arrow.addEventListener('click', () => {
-    window.scrollTo({
-        top: document.body.scrollHeight,
-        behavior: 'smooth'
-    });
-});
 
 // antes de tudo deve verifcar se o plano de fundo está presente 
 verificaPlanoFundo();
 
 // desabilita o botao caso não tenha valor dentro do textarea
-textarea.addEventListener("textarea", function () {
-    buttonCodifica.disabled = textarea.value.trim() === "";
-    buttonDescodifica.disabled = textarea.value.trim() === "";
-});
+textarea.addEventListener("input", verificaTextArea);
+
 
 
