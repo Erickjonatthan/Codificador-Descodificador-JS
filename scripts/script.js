@@ -1,15 +1,26 @@
 function addElementoCopiar() {
     var boxSubmit = document.querySelector("div.box_submit");
+    var elementoImagem = document.querySelector("div.box_submit .planoFundo");
 
-    // Verifica se o botão "Copiar" já existe no DOM
-    if (!document.querySelector("div.box_submit .btn_copiar")) {
-        var btnCopiar = document.createElement("button");
-        btnCopiar.classList.add("btn_copiar");
-        btnCopiar.textContent = "Copiar";
-        btnCopiar.onclick = copiar;
-        boxSubmit.appendChild(btnCopiar);
+    // Verifica se o elementoImagem está vazio
+    if (!elementoImagem || elementoImagem.innerHTML.trim() === "") {
+        // Se estiver vazio ou não for encontrado, cria o botão de cópia
+        if (!document.querySelector("div.box_submit .btn_copiar")) {
+            var btnCopiar = document.createElement("button");
+            btnCopiar.classList.add("btn_copiar");
+            btnCopiar.textContent = "Copiar";
+            btnCopiar.onclick = copiar;
+            boxSubmit.appendChild(btnCopiar);
+        }
+    } else {
+        // Se não estiver vazio, remove o botão de cópia se ele existir
+        var elementoCopiar = document.querySelector("div.box_submit .btn_copiar");
+        if (elementoCopiar) {
+            elementoCopiar.remove();
+        }
     }
 }
+
 
 function exibe(frase){
 
@@ -36,7 +47,7 @@ function copiar() {
 
 
 function codificar(){
-    addElementoCopiar();
+    
     var input = document.querySelector("div.box_input input");
     var caracteres = input.value.split("");
     var novaFrase = ""
@@ -67,17 +78,17 @@ function codificar(){
     }
     
     exibe(novaFrase)
-    
+    addElementoCopiar();
 }
 function descodificar() {
-    addElementoCopiar();
+    
     var novaFrase = input.value.replace(/ai/g, "a")
         .replace(/enter/g, "e")
         .replace(/imes/g, "i")
         .replace(/ober/g, "o")
         .replace(/ufat/g, "u");
     exibe(novaFrase)
-   
+    addElementoCopiar();
 }
 
 
