@@ -3,15 +3,92 @@ body{
 background: #F3F5FC;
 font-family: arial;
 }
-
-
+.scroll-to-bottom {
+    display: none;
+  }
+div#container {
+  margin: 40px;
+  display: flex;
+  justify-content: space-between;
+  
+}
 div#container .logo_alura{
   position: absolute;
   top: 0;
   margin-top:40px;
 
 }
+div#container .box_input {
+  
+  padding: 10px;
+  border-radius: 5px;
+  width:400px;
+  height:250px;
+  margin: 40px auto;
+  
+}
+div#container .box_input .design_input {
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  height: 100%;
+  font-size: 40px;
+  color: #0A3871;
+  padding: 5px;
+  outline: none;
+  
+}
+.design_input::placeholder {
+  color: #0A3871;
+  font-size: 40px; /* Define o tamanho da fonte do placeholder como 20 pixels */
 
+
+}
+
+.info{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.info img{
+  
+  width:10px;
+  height:10px;
+}
+
+
+div#container .box_input button {
+  
+  
+  display: inline-block;
+  margin-left: 10px; 
+}
+
+div#container .box_input .btn_codificar{
+  width: 128px;
+  height: 50px;
+  background: #0A3871;
+  border-radius: 24px;
+  color:black;
+}
+div#container .box_input .btn_descodificar{
+  width: 128px;
+  height: 50px;
+  background: #D8DFE8;
+  border-radius: 24px;
+  color:black;
+  
+  
+}
+div#container .box_submit {
+  position:relative;
+  text-align: center;
+  background: #FFFFFF;
+  box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+  border-radius: 32px;
+  width: 280px;
+  height: 487px;
+}
 div#container .box_submit .planoFundo{
 
  margin-top:30%
@@ -24,51 +101,8 @@ div#container .box_submit .planoFundo img{
   max-height: 80%;
   
 }
-.remover {
-  transition: opacity 0.5s ease-in-out;
-  opacity: 0;
-}
-.titulo{
-
-}
-.sub_titulo{
-
-}
-div#container {
-  margin: 40px;
-  display: flex;
-  justify-content: space-between;
-  
-}
 
 
-div#container .box_input {
-  
-  padding: 10px;
-  border-radius: 5px;
-  width:300px;
-  height:300px;
-  margin: 40px auto;
-  
-}
-.info{
-  display: flex;
-  flex-direction: row;
-}
-.info img{
-  width:10px;
-  height:10px;
-  margin-top:8%;
-}
-div#container .box_submit {
-  position:relative;
-  text-align: center;
-  background: #FFFFFF;
-  box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
-  border-radius: 32px;
-  width: 280px;
-  height: 488px;
-}
 div#container .box_submit .exibe_texto{
   position:relative;
    margin-top: 25%;
@@ -85,51 +119,8 @@ div#container .box_submit .exibe_texto{
   
 }
 
-div#container .box_input .design_input {
-  background-color: transparent;
-  border: none;
-  width: 100%;
-  height: 100%;
-  font-size: 40px;
-  color: #0A3871;
-  padding: 5px;
-  outline: none;
-  
-}
 
 
-
-
-.design_input::placeholder {
-  color: #0A3871;
-  font-size: 40px; /* Define o tamanho da fonte do placeholder como 20 pixels */
-
-
-}
-div#container .box_input button {
-  
-  
-  display: inline-block;
-  margin-left: 10px; 
-}
-
-div#container .box_input .btn_codificar{
-  background: #0A3871;
-  border-radius: 24px;
-  width: 128px;
-  height: 50px;
-  color:white;
-  
-}
-div#container .box_input .btn_descodificar{
-  width: 128px;
-  height: 50px;
-  background: #D8DFE8;
-  border-radius: 24px;
-  color:black;
-  
-  
-}
 div#container .box_submit .btn_copiar{
   position: absolute;
    left: 50%;
@@ -144,6 +135,67 @@ div#container .box_submit .btn_copiar{
   
 }
 
-.rodape{
-  
+footer {
+  background-color: #0A3871;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+}
+
+/* Espaçamento inferior para o conteúdo principal */
+main {
+  margin-bottom: 50px;
+}
+footer p {
+  color: #fff;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.fa-linkedin{
+  font-size: 30px;
+  margin: 10px;
+  color:#1562c1;
+}
+.fa-instagram{
+  font-size: 30px;
+  margin: 10px;
+  color:#bf156a;
+}
+.fa-github {
+  font-size: 30px;
+  margin: 10px;
+  color: black;
+}
+/* Estilo ao passar o mouse por cima dos ícones */
+.fa-linkedin:hover{
+  color: #0077B5;
+  transition: all 0.3s ease-in-out;
+
+}
+.fa-instagram:hover{
+  color: #8015bf;
+  transition: all 0.3s ease-in-out;
+
+}
+.fa-github:hover {
+  color: #666666;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Estilo do link que envolve o ícone */
+.social-link {
+  display: inline-block;
+  margin: 10px;
+  text-decoration: none;
+  color: white;
+}
+
+/* Estilo ao passar o mouse por cima do link */
+.social-link:hover {
+  color: #0077B5;
+  transition: all 0.3s ease-in-out;
 }

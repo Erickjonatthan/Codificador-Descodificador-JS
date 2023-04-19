@@ -1,59 +1,46 @@
+function verificaPlanoFundo(){
+    if (elementoImagem) {
+        elementoCopiar.remove()
+    }
+}
+
 function addElementoCopiar() {
-    var boxSubmit = document.querySelector("div.box_submit");
-    var elementoImagem = document.querySelector("div.box_submit .planoFundo");
+    const boxSubmit = document.querySelector("div.box_submit");
+    const elementoImagem = document.querySelector("div.box_submit .planoFundo");
 
-    
+    function isElementEmpty(element) {
+        return element == null || !element.hasChildNodes();
+    }
 
-    // Verifica se o elementoImagem está vazio
-    if (!elementoImagem || elementoImagem.innerHTML.trim() === "") {
-        // Se estiver vazio ou não for encontrado, cria o botão de cópia
-        if (!document.querySelector("div.box_submit .btn_copiar")) {
-            var btnCopiar = document.createElement("button");
-            btnCopiar.classList.add("btn_copiar");
-            btnCopiar.textContent = "Copiar";
-            btnCopiar.onclick = copiar;
-            boxSubmit.appendChild(btnCopiar);
-        }
-    } else {
-        // Se não estiver vazio, remove o botão de cópia se ele existir
-        var elementoCopiar = document.querySelector("div.box_submit .btn_copiar");
-        if (elementoCopiar) {
-            elementoCopiar.remove();
-        }
+    const copyButton = document.querySelector("div.box_submit .btn_copiar") ||
+        (() => {
+            const button = document.createElement("button");
+            const buttonText = "Copiar";
+            button.classList.add("btn_copiar");
+            button.textContent = buttonText;
+            button.onclick = copiar;
+            boxSubmit.appendChild(button);
+            return button;
+        })();
+
+    if (!isElementEmpty(elementoImagem)) {
+        copyButton.remove();
     }
 }
 
 function exibe(frase) {
+    const elementoTexto = document.querySelector("div.box_submit .exibe_texto");
 
-    
-
-    var elementoTexto = document.querySelector("div.box_submit .exibe_texto");
-
-
-    if (elementoImagem && input.value) {
+    if (elementoImagem && textarea.value) {
         elementoImagem.remove();
 
     }
-
     elementoTexto.textContent = frase;
 }
 
-function copiar() {
-    let exibe_texto = document.querySelector('div.box_submit .exibe_texto');
-    let texto = exibe_texto.textContent;
-
-    scss
-
-    navigator.clipboard.writeText(texto);
-
-}
 
 function codificar() {
-
-    
-
-    var input = document.querySelector("div.box_input textarea");
-    var caracteres = input.value.split("");
+    var caracteres = textarea.value.split("");
     var novaFrase = ""
 
     for (var i = 0; i < caracteres.length; i++) {
@@ -88,8 +75,8 @@ function descodificar() {
 
     
 
-    var input = document.querySelector("div.box_input textarea");
-    var novaFrase = input.value.replace(/ai/g, "a")
+    
+    var novaFrase = textarea.value.replace(/ai/g, "a")
         .replace(/enter/g, "e")
         .replace(/imes/g, "i")
         .replace(/ober/g, "o")
@@ -97,16 +84,34 @@ function descodificar() {
     exibe(novaFrase)
     addElementoCopiar();
 }
+function copiar() {
+    let exibe_texto = document.querySelector('div.box_submit .exibe_texto');
+    let texto = exibe_texto.textContent;
+    navigator.clipboard.writeText(texto);
 
-var input = document.querySelector("div.box_input textarea");
-var buttonCodifica = document.querySelector("div.box_input button.btn_codificar");
-var buttonDescodifica = document.querySelector("div.box_input button.btn_descodificar");
-var elementoCopiar = document.querySelector("div.box_submit .btn_copiar");
-var elementoImagem = document.querySelector("div.box_submit .planoFundo");
-if (elementoImagem) {
-    elementoCopiar.remove()
 }
-input.addEventListener("input", function () {
-    buttonCodifica.disabled = input.value.trim() === "";
-    buttonDescodifica.disabled = input.value.trim() === "";
+
+const textarea = document.querySelector("div.box_input textarea");
+const buttonCodifica = document.querySelector("div.box_input button.btn_codificar");
+const buttonDescodifica = document.querySelector("div.box_input button.btn_descodificar");
+const elementoCopiar = document.querySelector("div.box_submit .btn_copiar");
+const elementoImagem = document.querySelector("div.box_submit .planoFundo");
+const arrow = document.querySelector('.scroll-to-bottom');
+
+arrow.addEventListener('click', () => {
+    window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: 'smooth'
+    });
 });
+
+// antes de tudo deve verifcar se o plano de fundo está presente 
+verificaPlanoFundo();
+
+// desabilita o botao caso não tenha valor dentro do textarea
+textarea.addEventListener("textarea", function () {
+    buttonCodifica.disabled = textarea.value.trim() === "";
+    buttonDescodifica.disabled = textarea.value.trim() === "";
+});
+
+
