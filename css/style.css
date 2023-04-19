@@ -1,19 +1,28 @@
 body{
 
 background: #F3F5FC;
-  
+font-family: arial;
 }
-.logo_alura{
+
+
+div#container .logo_alura{
   position: absolute;
   top: 0;
   margin-top:40px;
 
 }
 
-div.box_submit .planoFundo{
+div#container .box_submit .planoFundo{
 
-margin-top: 50%;
+ margin-top:30%
 
+
+}
+div#container .box_submit .planoFundo img{
+
+  max-width: 80%;
+  max-height: 80%;
+  
 }
 .remover {
   transition: opacity 0.5s ease-in-out;
@@ -29,59 +38,109 @@ div#container {
   margin: 40px;
   display: flex;
   justify-content: space-between;
+  
 }
 
-div.box_input {
+
+div#container .box_input {
+  
   padding: 10px;
   border-radius: 5px;
-  width:400px;
-  height:400px;
+  width:300px;
+  height:300px;
   margin: 40px auto;
+  
 }
-
-div.box_submit {
+.info{
+  display: flex;
+  flex-direction: row;
+}
+.info img{
+  width:10px;
+  height:10px;
+  margin-top:8%;
+}
+div#container .box_submit {
+  position:relative;
   text-align: center;
   background: #FFFFFF;
   box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
   border-radius: 32px;
-  width: 400px;
-  height: 650px;
+  width: 280px;
+  height: 488px;
 }
-div.box_submit .exibe_texto{
+div#container .box_submit .exibe_texto{
+  position:relative;
+   margin-top: 25%;
    color: #0A3871;
-   font-size: 40px;
+   font-size: 30px;
    text-align: center;
+   padding:15px;
+   word-wrap: break-word;
+   overflow: auto; 
+  font-size: 1em; 
+  -ms-text-size-adjust: 100%; 
+  -webkit-text-size-adjust: 100%; 
+  text-size-adjust: 100%; 
+  
 }
 
-div.box_input .design_input {
+div#container .box_input .design_input {
   background-color: transparent;
-  border: none; 
-  width: 100%; 
+  border: none;
+  width: 100%;
   height: 100%;
   font-size: 40px;
   color: #0A3871;
   padding: 5px;
-  outline: none; 
+  outline: none;
+  
 }
+
+
+
 
 .design_input::placeholder {
   color: #0A3871;
   font-size: 40px; /* Define o tamanho da fonte do placeholder como 20 pixels */
+
+
 }
-div.box_input .btn_codificar{
+div#container .box_input button {
+  
+  
+  display: inline-block;
+  margin-left: 10px; 
+}
+
+div#container .box_input .btn_codificar{
   background: #0A3871;
   border-radius: 24px;
-  width: 328px;
-  height: 67px;
+  width: 128px;
+  height: 50px;
+  color:white;
+  
+}
+div#container .box_input .btn_descodificar{
+  width: 128px;
+  height: 50px;
+  background: #D8DFE8;
+  border-radius: 24px;
+  color:black;
   
   
 }
-div.box_input .btn_descodificar{
-  width: 328px;
-  height: 67px;
+div#container .box_submit .btn_copiar{
+  position: absolute;
+   left: 50%;
+  transform: translateX(-50%);
+  top:150px;
+  width: 128px;
+  height: 50px;
   background: #D8DFE8;
   border-radius: 24px;
-  
+  margin-top:100%;
+  color:black;
   
 }
 

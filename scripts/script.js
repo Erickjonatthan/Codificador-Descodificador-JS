@@ -1,16 +1,43 @@
+function addElementoCopiar() {
+    var boxSubmit = document.querySelector("div.box_submit");
+
+    // Verifica se o botão "Copiar" já existe no DOM
+    if (!document.querySelector("div.box_submit .btn_copiar")) {
+        var btnCopiar = document.createElement("button");
+        btnCopiar.classList.add("btn_copiar");
+        btnCopiar.textContent = "Copiar";
+        btnCopiar.onclick = copiar;
+        boxSubmit.appendChild(btnCopiar);
+    }
+}
+
 function exibe(frase){
 
     var elementoTexto = document.querySelector("div.box_submit .exibe_texto");
-    var elementoImagem = document.querySelector("div.box_submit .planoFundo");
+
+    
     if (elementoImagem && input.value) {
         elementoImagem.remove();
+       
     }
-  
+ 
     elementoTexto.textContent = frase;
    
 }
 
+function copiar() {
+    let exibe_texto = document.querySelector('div.box_submit .exibe_texto');
+    let texto = exibe_texto.textContent;
+
+    navigator.clipboard.writeText(texto);
+
+    
+}
+
+
 function codificar(){
+    addElementoCopiar();
+    var input = document.querySelector("div.box_input input");
     var caracteres = input.value.split("");
     var novaFrase = ""
 
@@ -43,6 +70,7 @@ function codificar(){
     
 }
 function descodificar() {
+    addElementoCopiar();
     var novaFrase = input.value.replace(/ai/g, "a")
         .replace(/enter/g, "e")
         .replace(/imes/g, "i")
@@ -55,6 +83,13 @@ function descodificar() {
 
 var input = document.querySelector("div.box_input input");
 var buttonCodifica = document.querySelector("div.box_input button.btn_codificar");
-buttonCodifica.onclick = codificar;
 var buttonDescodifica = document.querySelector("div.box_input button.btn_descodificar");
-buttonDescodifica.onclick = descodificar;
+var elementoCopiar = document.querySelector("div.box_submit .btn_copiar");
+var elementoImagem = document.querySelector("div.box_submit .planoFundo");
+if(elementoImagem){
+    elementoCopiar.remove()
+}
+input.addEventListener("input", function () {
+    buttonCodifica.disabled = input.value.trim() === "";
+    buttonDescodifica.disabled = input.value.trim() === "";
+});
