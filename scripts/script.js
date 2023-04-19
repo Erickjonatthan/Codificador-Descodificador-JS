@@ -2,6 +2,8 @@ function addElementoCopiar() {
     var boxSubmit = document.querySelector("div.box_submit");
     var elementoImagem = document.querySelector("div.box_submit .planoFundo");
 
+    
+
     // Verifica se o elementoImagem está vazio
     if (!elementoImagem || elementoImagem.innerHTML.trim() === "") {
         // Se estiver vazio ou não for encontrado, cria o botão de cópia
@@ -21,34 +23,36 @@ function addElementoCopiar() {
     }
 }
 
+function exibe(frase) {
 
-function exibe(frase){
+    
 
     var elementoTexto = document.querySelector("div.box_submit .exibe_texto");
 
-    
+
     if (elementoImagem && input.value) {
         elementoImagem.remove();
-       
+
     }
- 
+
     elementoTexto.textContent = frase;
-   
 }
 
 function copiar() {
     let exibe_texto = document.querySelector('div.box_submit .exibe_texto');
     let texto = exibe_texto.textContent;
 
+    scss
+
     navigator.clipboard.writeText(texto);
 
-    
 }
 
+function codificar() {
 
-function codificar(){
     
-    var input = document.querySelector("div.box_input input");
+
+    var input = document.querySelector("div.box_input textarea");
     var caracteres = input.value.split("");
     var novaFrase = ""
 
@@ -57,7 +61,7 @@ function codificar(){
         if (caracteres[i] == 'a') {
             novaFrase += "ai";
         }
-        else if (caracteres[i] =='e') {
+        else if (caracteres[i] == 'e') {
             novaFrase += "enter";
         }
         else if (caracteres[i] == 'i') {
@@ -66,7 +70,7 @@ function codificar(){
         else if (caracteres[i] == 'o') {
             novaFrase += "ober";
         }
-        else if (caracteres[i] =='u') {
+        else if (caracteres[i] == 'u') {
             novaFrase += "ufat";
         }
         else {
@@ -76,12 +80,15 @@ function codificar(){
 
 
     }
-    
+
     exibe(novaFrase)
     addElementoCopiar();
 }
 function descodificar() {
+
     
+
+    var input = document.querySelector("div.box_input textarea");
     var novaFrase = input.value.replace(/ai/g, "a")
         .replace(/enter/g, "e")
         .replace(/imes/g, "i")
@@ -91,13 +98,12 @@ function descodificar() {
     addElementoCopiar();
 }
 
-
-var input = document.querySelector("div.box_input input");
+var input = document.querySelector("div.box_input textarea");
 var buttonCodifica = document.querySelector("div.box_input button.btn_codificar");
 var buttonDescodifica = document.querySelector("div.box_input button.btn_descodificar");
 var elementoCopiar = document.querySelector("div.box_submit .btn_copiar");
 var elementoImagem = document.querySelector("div.box_submit .planoFundo");
-if(elementoImagem){
+if (elementoImagem) {
     elementoCopiar.remove()
 }
 input.addEventListener("input", function () {

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,48 +8,50 @@
     <link href="./css/style.css" rel="stylesheet" type="text/css" />
     <title>Criptografe e descriptografe textos</title>
 </head>
+
 <body>
     
-    <div id="container">
-    <div class="logo_alura">
-        <img src="./img/Vector.png">
-    </div>
-    <div class="box_input">
-        <input required class="design_input" type="text" placeholder="Digite seu texto" autofocus />
-        <div class="info">
-        <img src="./img/info.png" alt="informação">
-        
-        <h6>Apenas letras minúsculas e sem acento.</h6>
+        <div id="container">
+        <div class="logo_alura">
+            <img src="./img/Vector.png">
         </div>
-        <button class="btn_codificar" onclick="codificar()">
-            Codificar
-        </button>
-        <button class="btn_descodificar" onclick="descodificar()">
-            Descodificar
-        </button>
-        
+        <div class="box_input">
+            <textarea required class="design_input" placeholder="Digite seu texto" autofocus></textarea>
+            <div class="info">
+                <img src="./img/info.png" alt="informação">
 
-    </div>
-    <div class="box_submit">
-    
-         <div class="planoFundo">
-            <img src="./img/High quality products 1 1.svg">
-            <h4>Nenhuma mensagem encontrada</h5>
-            <h5>Digite um texto que você deseja criptografar ou descriptografar.</h6>
-           
+                <h6>Apenas letras minúsculas e sem acento.</h6>
+            </div>
+            <button class="btn_codificar" onclick="codificar()">
+                Codificar
+            </button>
+            <button class="btn_descodificar" onclick="descodificar()">
+                Descodificar
+            </button>
+
+
         </div>
-        <div class="exibe_texto">
-        <button class="btn_copiar" onclick="copiar()">
-            Copiar
-        </button>
+        <div class="box_submit">
+
+            <div class="planoFundo">
+                <img src="./img/High quality products 1 1.svg">
+                <h4>Nenhuma mensagem encontrada</h5>
+                    <h5>Digite um texto que você deseja criptografar ou descriptografar.</h6>
+
+            </div>
+            <div class="exibe_texto">
+                <button class="btn_copiar" onclick="copiar()">
+                    Copiar
+                </button>
+            </div>
+
+
         </div>
-        
-    
-    </div>
     </div>
     <footer class="rodape">
-    
+
     </footer>
 </body>
 <script src="scripts/script.js"> </script>
+
 </html>
