@@ -5,14 +5,6 @@ function addExibeTexto() {
     boxSubmit.appendChild(elementoCopiar);
 }
 
-function addPlanoFundo() {
-   
-    if (exibe_texto) {
-        exibe_texto.remove();
-        elementoCopiar.remove();
-    }
-    boxSubmit.appendChild(elementoImagem); // adicionando ao div box_submit
-}
 
 function verificaTextArea() {
     
@@ -110,8 +102,6 @@ function copiar() {
 }
 
 const textarea = document.querySelector("div.box_input textarea");
-const buttonCodifica = document.querySelector("div.box_input button.btn_codificar");
-const buttonDescodifica = document.querySelector("div.box_input button.btn_descodificar");
 const elementoCopiar = document.querySelector("div.box_submit .btn_copiar");
 const elementoImagem = document.querySelector("div.box_submit .planoFundo");
 let exibe_texto = document.querySelector('div.box_submit .exibe_texto');
