@@ -1,13 +1,12 @@
 function addExibeTexto() {
     elementoImagem.remove();
-    const boxSubmit = document.querySelector("div.box_submit");
     exibe_texto.classList.add("exibe_texto"); // adiciona a classe
     boxSubmit.appendChild(exibe_texto);
     boxSubmit.appendChild(elementoCopiar);
 }
 
 function addPlanoFundo() {
-    const exibe_texto = document.querySelector('div.box_submit .exibe_texto');
+   
     if (exibe_texto) {
         exibe_texto.remove();
         elementoCopiar.remove();
@@ -16,7 +15,7 @@ function addPlanoFundo() {
 }
 
 function verificaTextArea() {
-    const exibe_texto = document.querySelector('div.box_submit .exibe_texto');
+    
     if (textarea.value == "") {
         if (exibe_texto && exibe_texto.style.display == "") {
             exibe_texto.remove();
@@ -40,9 +39,9 @@ function verificaTextArea() {
 }
 
 function exibe(frase) {
-    const elementoTexto = document.querySelector("div.box_submit .exibe_texto");
-    if (elementoTexto) {
-        elementoTexto.textContent = frase;
+    
+    if (exibe_texto) {
+        exibe_texto.textContent = frase;
         boxSubmit.appendChild(elementoCopiar);
     }
 }
