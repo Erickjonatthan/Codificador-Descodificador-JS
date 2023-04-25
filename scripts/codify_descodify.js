@@ -106,8 +106,8 @@ const elementoCopiar = document.querySelector("div.box_submit .btn_copiar");
 const elementoImagem = document.querySelector("div.box_submit .planoFundo");
 let exibe_texto = document.querySelector('div.box_submit .exibe_texto');
 const boxSubmit = document.querySelector("div.box_submit");
-// antes de tudo deve verifcar se o plano de fundo está presente 
-exibe_texto.style.display = "none";
+
+exibe_texto.style.display = "none";//não aparece o campo que exibe o texto
 
 textarea.addEventListener("input", function () {
     verificaTextArea();

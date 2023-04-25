@@ -86,8 +86,9 @@ div#container .box_submit {
   background: #FFFFFF;
   box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
   border-radius: 32px;
-  width: 280px;
-  height: 487px;
+  width: 20%;
+  height: 100%;
+  margin-bottom: 5%;
 }
 div#container .box_submit .planoFundo{
 z-index:2;
@@ -123,10 +124,6 @@ div#container .box_submit .exibe_texto{
 
 
 div#container .box_submit .btn_copiar{
-  position: absolute;
-   left: 50%;
-  transform: translateX(-50%);
-  top:150px;
   width: 128px;
   height: 50px;
   background: #D8DFE8;
@@ -137,7 +134,7 @@ div#container .box_submit .btn_copiar{
 }
 
 footer {
-  position:absolute;
+  position:fixed;
   bottom:0;
   left:0;
   background-color: #0A3871;
