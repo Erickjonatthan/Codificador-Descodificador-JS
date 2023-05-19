@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="./css/style.css"  />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="./css/responsivo.css">
@@ -13,47 +14,45 @@
 </head>
 
 <body>
-    
-    <div id="container">
+    <header>
+        <h1><a href="index.html"><img src="./img/Vector.png" alt="logo da alura"></a></h1>
+    </header>
 
-        <div class="logo_alura">
-        <a href=""><img src="./img/Vector.png"></a>
-        </div>
+    <main>
 
-        <div class="box_input">
+        <section class="input">
 
             <textarea required class="design_input" placeholder="Digite seu texto" autofocus></textarea>
-            <div class="info">
-            <img src="./img/info.png" alt="informação">
-            <h6>Apenas letras minúsculas e sem acento.</h6>
+            <div class="options">
+                <div class="info">
+                <img src="./img/info.png" alt="informacaoo">
+                <h6>Apenas letras minúsculas e sem acento.</h6>
+                </div>
+                <div class="botoes">
+                    <button class="btn_codificar" onclick="codificar()">Codificar</button>
+                    <button class="btn_descodificar" onclick="descodificar()">Descodificar</button>
+                </div>
             </div>
-            <button class="btn_codificar btns" onclick="codificar()">Codificar</button>
-            <button class="btn_descodificar" onclick="descodificar()">Descodificar</button>
+        </section>
 
-        </div>
-        <div class="box_submit">
+        <section class="submit-vazio">
+            <img src="./img/High quality products 1 1.svg">
+            <h2>
+                Nenhuma mensagem encontrada<br>Digite um texto que você deseja criptografar ou descriptografar. 
+            </h2>
+        </section>
 
-            <div class="planoFundo">
-
-                <img src="./img/High quality products 1 1.svg">
-                <h4>Nenhuma mensagem encontrada</h5>
-                <h5>Digite um texto que você deseja criptografar ou descriptografar.</h6>
-
+        <section class="submit-conteudo">
+            <div class="exibe-texto">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius assumenda esse modi aperiam aliquid delectus eligendi.
             </div>
+            <button  onclick="copiar()" class="btn_copiar">Copiar</button>
+        </section>
 
-            <div class="exibe_texto">
-                
-                <button class="btn_copiar" onclick="copiar()">Copiar</button>
-
-            </div>
-
-        </div>
-    </div>
+    </main>
     
     <a href="#" class="scroll-to-bottom">
-
-        <i class="fas fa-chevron-down"></i>
-    
+      <i class="fas fa-chevron-down"></i>
     </a>
 
     <footer>

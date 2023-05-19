@@ -1,30 +1,32 @@
-function addExibeTexto() {
-    elementoImagem.remove();
-    exibe_texto.classList.add("exibe_texto"); // adiciona a classe
-    boxSubmit.appendChild(exibe_texto);
-    boxSubmit.appendChild(elementoCopiar);
-}
+function addSubmitCont() {
+    submitCont.style.display = "flex";
+    submitVazio.style.display = "none";
+    submitCont.style.opacity = "0";
 
+    setTimeout(function () {
+        submitCont.style.opacity = "1";
+        submitCont.style.transition = "opacity 1s"; 
+    }, 10);
+}
 
 function verificaTextArea() {
     
     if (textarea.value == "") {
         if (exibe_texto && exibe_texto.style.display == "") {
-            exibe_texto.remove();
-            elementoCopiar.remove();
+           submitCont.style.display="none";
         }
-        boxSubmit.appendChild(elementoImagem); // adicionando ao div box_submit
+        submitVazio.style.display="flex"; // adicionando ao div box_submit
     }
    
     else if (textarea.value){
         if (exibe_texto){
-            exibe_texto.remove();
+            submitCont.style.display = "none";
         }
         
        
-        elementoCopiar.remove();
+        
        
-        boxSubmit.appendChild(elementoImagem);
+        submitVazio.style.display="flex";
     }
    
     
@@ -34,14 +36,13 @@ function exibe(frase) {
     
     if (exibe_texto) {
         exibe_texto.textContent = frase;
-        boxSubmit.appendChild(elementoCopiar);
     }
 }
 
 function codificar() {
     if (exibe_texto && textarea.value){
-        elementoImagem.remove();
-        addExibeTexto();
+        submitVazio.style.display="none";
+        addSubmitCont();
         exibe_texto.style.display = ""
         let caracteres = textarea.value.split("");
         let novaFrase = ""
@@ -79,8 +80,8 @@ function codificar() {
 
 function descodificar() {
     if (exibe_texto && textarea.value) {
-        elementoImagem.remove();
-        addExibeTexto();
+        submitVazio.style.display="none";
+        addSubmitCont();
         exibe_texto.style.display = "";
         let novaFrase = textarea.value.replace(/ai/g, "a")
             .replace(/enter/g, "e")
@@ -95,19 +96,19 @@ function descodificar() {
 }
 
 function copiar() {
+
     texto=exibe_texto.textContent
     navigator.clipboard.writeText(texto)
    
     
 }
 
-const textarea = document.querySelector("div.box_input textarea");
-const elementoCopiar = document.querySelector("div.box_submit .btn_copiar");
-const elementoImagem = document.querySelector("div.box_submit .planoFundo");
-let exibe_texto = document.querySelector('div.box_submit .exibe_texto');
-const boxSubmit = document.querySelector("div.box_submit");
+const textarea = document.querySelector("section.input textarea");
+const submitVazio = document.querySelector("section.submit-vazio");
+const submitCont = document.querySelector("section.submit-conteudo");
+let exibe_texto = document.querySelector("section.submit-conteudo .exibe-texto");
 
-exibe_texto.style.display = "none";//não aparece o campo que exibe o texto
+submitCont.style.display = "none";//não aparece o campo que exibe o texto
 
 textarea.addEventListener("input", function () {
     verificaTextArea();

@@ -3,52 +3,117 @@ body{
 background: #F3F5FC;
 font-family: arial;
 }
-.scroll-to-bottom {
-    display: none;
-  }
-div#container {
-  margin: 40px;
-  display: flex;
-  justify-content: space-between;
-  
-}
-div#container .logo_alura{
-  position: absolute;
-  top: 0;
-  margin-top:40px;
 
+header{
+  margin: 40px 0 0px 40px;
+  display: inline-block;
 }
-div#container .box_input {
-  
-  padding: 10px;
-  border-radius: 5px;
-  width:400px;
-  height:250px;
-  margin: 40px auto;
+main{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
   
 }
-div#container .box_input .design_input {
+.input{
+  width: 50vw;  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.design_input {
   background-color: transparent;
   border: none;
-  width: 100%;
-  height: 100%;
+  width:400px;
+  height:250px;
   font-size: 25px;
   color: #0A3871;
   padding: 5px;
   outline: none;
-  
 }
 .design_input::placeholder {
   color: #0A3871;
-  font-size: 25px; /* Define o tamanho da fonte do placeholder como 20 pixels */
-
-
+  font-size: 25px;
+}
+.options{
+  margin-top: 30%;
+}
+.botoes{
+  display: flex;
+  justify-content: space-evenly;
+}
+.btn_codificar {
+  width: 128px;
+  height: 50px;
+  background: #0A3871;
+  border-radius: 24px;
+  color: white;
+  cursor: pointer;
+}
+.btn_descodificar {
+  cursor: pointer;
+  width: 128px;
+  height: 50px;
+  background: #D8DFE8;
+  border-radius: 24px;
+  color: black;
 }
 
+.submit-conteudo,.submit-vazio{
+  width: 15vw;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #FFFFFF;
+  box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+  border-radius: 32px;
+  padding: 40px 40px 0 40px;
+  
+}
+.submit-conteudo{
+   max-height: none;  
+   overflow: auto;
+   justify-content: space-between;
+}
+.submit-vazio img{
+  width: 100%;
+}
+.exibe-texto{
+  text-align: center;
+  color: #0A3871;
+  font-size: 18px;
+}
+.btn_copiar{
+  width: 128px;
+  height: 50px;
+  background: #D8DFE8;
+  border-radius: 24px;
+  color: black;
+  padding: 10px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.submit-vazio h2{
+  display: block;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20%;
+}
+
+.scroll-to-bottom {
+    display: none;
+
+}
 .info{
   display: flex;
   flex-direction: row;
   align-items: center;
+  margin: 20px 0;
+  font-weight: bold;
+  font-size: 15px;
 }
 .info img{
   
@@ -57,99 +122,16 @@ div#container .box_input .design_input {
 }
 
 
-div#container .box_input button {
-  
-  
-  display: inline-block;
-  margin-left: 10px; 
-}
-
-div#container .box_input .btn_codificar{
-  width: 128px;
-  height: 50px;
-  background: #0A3871;
-  border-radius: 24px;
-  color:white;
-}
-div#container .box_input .btn_descodificar{
-  width: 128px;
-  height: 50px;
-  background: #D8DFE8;
-  border-radius: 24px;
-  color:black;
-  
-  
-}
-div#container .box_submit {
-  position:relative;
-  text-align: center;
-  background: #FFFFFF;
-  box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
-  border-radius: 32px;
-  width: 20%;
-  height: 100%;
-  margin-bottom: 5%;
-}
-div#container .box_submit .planoFundo{
-z-index:2;
- margin-top:30%
-
-
-}
-div#container .box_submit .planoFundo img{
-
-  max-width: 80%;
-  max-height: 80%;
-  
-}
-
-
-div#container .box_submit .exibe_texto{
-  z-index:1;
-  position:relative;
-   margin-top: 25%;
-   color: #0A3871;
-   font-size: 30px;
-   text-align: center;
-   padding:15px;
-   word-wrap: break-word;
-   overflow: auto; 
-  font-size: 1em; 
-  -ms-text-size-adjust: 100%; 
-  -webkit-text-size-adjust: 100%; 
-  text-size-adjust: 100%; 
-  
-}
-
-
-
-div#container .box_submit .btn_copiar{
-  width: 128px;
-  height: 50px;
-  background: #D8DFE8;
-  border-radius: 24px;
-  margin-top:10%;
-  color:black;
-  
-}
-
 footer {
-  position:fixed;
-  bottom:0;
-  left:0;
-  background-color: #0A3871;
+  margin-top: 3%;
+  background: #0A3871;
   color: white;
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 50px;
-  width: 100%;
+  padding: 15px;
+  
 }
 
-/* Espaçamento inferior para o conteúdo principal */
-main {
-  margin-bottom: 50px;
-}
 footer p {
   color: #fff;
   font-size: 16px;
