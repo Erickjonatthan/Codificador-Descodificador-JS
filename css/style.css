@@ -83,7 +83,9 @@ main{
 .exibe-texto{
   text-align: center;
   color: #0A3871;
-  font-size: 18px;
+  font-size: 1em;
+  word-wrap: break-word;
+  max-width: 14em;
 }
 .btn_copiar{
   width: 128px;
