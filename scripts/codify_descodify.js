@@ -1,5 +1,5 @@
 function addSubmitCont() {
-    submitCont.style.display = "flex";
+    submitCont.style.display = "";
     submitVazio.style.display = "none";
     submitCont.style.opacity = "0";
 
@@ -15,7 +15,7 @@ function verificaTextArea() {
         if (exibe_texto && exibe_texto.style.display == "") {
            submitCont.style.display="none";
         }
-        submitVazio.style.display="flex"; // adicionando ao div box_submit
+        submitVazio.style.display=""; 
     }
    
     else if (textarea.value){
@@ -26,7 +26,7 @@ function verificaTextArea() {
        
         
        
-        submitVazio.style.display="flex";
+        submitVazio.style.display="";
     }
    
     
@@ -71,8 +71,15 @@ function codificar() {
 
 
         }
+
         exibe(novaFrase);
         textarea.value = '';
+    }
+    else{
+        submitVazio.classList.add("tremer");
+        setTimeout(function () {
+            submitVazio.classList.remove("tremer");
+        }, 1000);
     }
     
    
@@ -91,6 +98,12 @@ function descodificar() {
         exibe(novaFrase);
         textarea.value = '';
     }
+    else {
+        submitVazio.classList.add("tremer");
+        setTimeout(function () {
+            submitVazio.classList.remove("tremer");
+        }, 1000);
+    }
     
    
 }
@@ -99,13 +112,31 @@ function copiar() {
 
     texto=exibe_texto.textContent
     navigator.clipboard.writeText(texto)
-   
+    bntCopiar.innerHTML = "COPIADO!";
+    bntCopiar.style.animation = "none";
+    
+    setTimeout(function () {
+        bntCopiar.innerHTML = "Copiar";
+        bntCopiar.style.animation = "";
+    }, 2000);
     
 }
+
+
+// adiciona uma seta para descer a pag
+const arrow = document.querySelector('.scroll-to-bottom');
+arrow.addEventListener('click', () => {
+    window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: 'smooth'
+    });
+});
+
 
 const textarea = document.querySelector("section.input textarea");
 const submitVazio = document.querySelector("section.submit-vazio");
 const submitCont = document.querySelector("section.submit-conteudo");
+const bntCopiar = document.querySelector("section.submit-conteudo button");
 let exibe_texto = document.querySelector("section.submit-conteudo .exibe-texto");
 
 submitCont.style.display = "none";//não aparece o campo que exibe o texto

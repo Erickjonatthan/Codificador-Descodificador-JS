@@ -1,18 +1,20 @@
-body{
-
-background: #F3F5FC;
-font-family: arial;
+body {
+  background: linear-gradient(to bottom, white, gray);
+  font-family: Arial, sans-serif;
 }
 
 header{
   margin: 40px 0 0px 40px;
   display: inline-block;
 }
+header img{
+    width: 70px;
+    height: 65px;
+}
 main{
   display: flex;
   justify-content: space-evenly;
-  align-items: center;
-  
+  align-items: center; 
 }
 .input{
   width: 50vw;  
@@ -27,36 +29,62 @@ main{
   width:400px;
   height:250px;
   font-size: 25px;
-  color: #0A3871;
+  color: rgb(197, 98, 85);
   padding: 5px;
   outline: none;
 }
 .design_input::placeholder {
-  color: #0A3871;
+  color: rgb(197, 98, 85);
   font-size: 25px;
 }
 .options{
   margin-top: 30%;
-}
-.botoes{
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
 }
-.btn_codificar {
+.options p{
+  font-size: 15px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+@keyframes pulsar {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.btn_codificar{
+  margin-right: 25px;
+}
+.btn_codificar,.btn_copiar {
   width: 128px;
   height: 50px;
-  background: #0A3871;
+  background: rgba(229, 101, 84, 0.9);
+  border: rgba(214, 154, 147, 0.9)  solid 2px ;
   border-radius: 24px;
   color: white;
   cursor: pointer;
+  
+  
 }
 .btn_descodificar {
   cursor: pointer;
   width: 128px;
   height: 50px;
-  background: #D8DFE8;
+  background: rgb(232, 222, 216);
+  border: rgba(212, 183, 179, 0.9)  solid 2px ;
   border-radius: 24px;
   color: black;
+}
+
+.btn_codificar:hover,.btn_descodificar:hover{
+  animation: pulsar 1.5s ease-in-out infinite;
 }
 
 .submit-conteudo,.submit-vazio{
@@ -67,13 +95,12 @@ main{
   align-items: center;
   flex-direction: column;
   background: #FFFFFF;
-  box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+  box-shadow: 0px 0px 20px 4px rgba(229, 101, 84, 0.9);
   border-radius: 32px;
   padding: 40px 40px 0 40px;
   
 }
-.submit-conteudo{
-   max-height: none;  
+.submit-conteudo{  
    overflow: auto;
    justify-content: space-between;
 }
@@ -81,21 +108,30 @@ main{
   width: 100%;
 }
 .exibe-texto{
+  display: block;
   text-align: center;
-  color: #0A3871;
+  color: rgb(197, 98, 85);
   font-size: 1em;
   word-wrap: break-word;
-  max-width: 14em;
+  max-width: 100%;
 }
 .btn_copiar{
-  width: 128px;
-  height: 50px;
-  background: #D8DFE8;
-  border-radius: 24px;
-  color: black;
   padding: 10px;
   margin-top: 15px;
   margin-bottom: 10px;
+  animation: pulsar 1.5s ease-in-out infinite;
+}
+@keyframes tremer {
+  0% { transform: translate(0, 0); }
+  20% { transform: translate(-2px, -2px) rotate(-1deg); }
+  40% { transform: translate(2px, 2px) rotate(1deg); }
+  60% { transform: translate(-2px, -2px) rotate(-1deg); }
+  80% { transform: translate(2px, 2px) rotate(1deg); }
+  100% { transform: translate(0, 0); }
+}
+
+.tremer {
+  animation: tremer 0.5s infinite;
 }
 
 .submit-vazio h2{
@@ -104,7 +140,11 @@ main{
   text-align: center;
   margin-top: 20%;
 }
-
+.submit-vazio p{
+  text-align: center;
+  padding-top: 15px;
+  font-size: 14px;
+}
 .scroll-to-bottom {
     display: none;
 
@@ -126,10 +166,11 @@ main{
 
 footer {
   margin-top: 3%;
-  background: #0A3871;
+  background: rgba(229, 101, 84, 0.9);
   color: white;
   display: flex;
   justify-content: center;
+  align-items: center;
   padding: 15px;
   
 }
@@ -137,7 +178,6 @@ footer {
 footer p {
   color: #fff;
   font-size: 16px;
-  margin-top: 20px;
 }
 
 .fa-linkedin{
@@ -155,32 +195,21 @@ footer p {
   margin: 10px;
   color: black;
 }
-/* Estilo ao passar o mouse por cima dos ícones */
+
 .fa-linkedin:hover{
   color: #0077B5;
   transition: all 0.3s ease-in-out;
+  transform: translateY(-5px) scale(1.2);
 
 }
 .fa-instagram:hover{
   color: #8015bf;
   transition: all 0.3s ease-in-out;
+  transform: translateY(-5px) scale(1.2);
 
 }
 .fa-github:hover {
   color: #666666;
   transition: all 0.3s ease-in-out;
-}
-
-/* Estilo do link que envolve o ícone */
-.social-link {
-  display: inline-block;
-  margin: 10px;
-  text-decoration: none;
-  color: white;
-}
-
-/* Estilo ao passar o mouse por cima do link */
-.social-link:hover {
-  color: #0077B5;
-  transition: all 0.3s ease-in-out;
+  transform: translateY(-5px) scale(1.2);
 }
