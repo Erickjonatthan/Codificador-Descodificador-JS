@@ -40,28 +40,30 @@ function exibe(frase) {
 }
 
 function codificar() {
+    
     if (exibe_texto && textarea.value){
+        let fraseMin = textarea.value.toLowerCase();
         submitVazio.style.display="none";
         addSubmitCont();
         exibe_texto.style.display = ""
-        let caracteres = textarea.value.split("");
+        let caracteres = fraseMin.split("");
         let novaFrase = ""
 
         for (let i = 0; i < caracteres.length; i++) {
 
-            if (caracteres[i] == 'a') {
+            if (caracteres[i] == 'a' || caracteres[i] == 'ã' || caracteres[i] == 'â' || caracteres[i] == 'á' || caracteres[i] == 'à') {
                 novaFrase += "ai";
             }
-            else if (caracteres[i] == 'e') {
+            else if (caracteres[i] == 'e' || caracteres[i] == 'ê' || caracteres[i] == 'é' || caracteres[i] == 'è') {
                 novaFrase += "enter";
             }
-            else if (caracteres[i] == 'i') {
+            else if (caracteres[i] == 'i' || caracteres[i] == 'î' || caracteres[i] == 'í' || caracteres[i] == 'ì') {
                 novaFrase += "imes";
             }
-            else if (caracteres[i] == 'o') {
+            else if (caracteres[i] == 'o' || caracteres[i] == 'õ' || caracteres[i] == 'ô' || caracteres[i] == 'ó' || caracteres[i] == 'ò') {
                 novaFrase += "ober";
             }
-            else if (caracteres[i] == 'u') {
+            else if (caracteres[i] == 'u' || caracteres[i] == 'û' || caracteres[i] == 'ú' || caracteres[i] == 'ù') {
                 novaFrase += "ufat";
             }
             else {

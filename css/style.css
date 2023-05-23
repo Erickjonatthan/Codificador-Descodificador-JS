@@ -149,20 +149,6 @@ main{
     display: none;
 
 }
-.info{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin: 20px 0;
-  font-weight: bold;
-  font-size: 15px;
-}
-.info img{
-  
-  width:10px;
-  height:10px;
-}
-
 
 footer {
   margin-top: 3%;
