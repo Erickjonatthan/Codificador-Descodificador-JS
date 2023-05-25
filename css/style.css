@@ -38,6 +38,18 @@ main{
   color: rgb(197, 98, 85);
   font-size: 25px;
 }
+.options {
+  margin-top: 30%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.options p {
+  font-size: 15px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
 .botoes{
   width: 100%;
   display: flex;

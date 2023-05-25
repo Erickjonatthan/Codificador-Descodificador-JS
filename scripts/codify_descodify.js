@@ -75,6 +75,7 @@ function codificar() {
         }
 
         exibe(novaFrase);
+        textarea.value = '';
     }
     else{
         submitVazio.classList.add("tremer");
@@ -97,6 +98,7 @@ function descodificar() {
             .replace(/ober/g, "o")
             .replace(/ufat/g, "u");
         exibe(novaFrase);
+        textarea.value = '';
     }
     else {
         submitVazio.classList.add("tremer");
@@ -145,7 +147,7 @@ if (/Mobi|Android/i.test(navigator.userAgent)) {
 
 
 
-const textarea = document.querySelector("section.input textarea");
+let textarea = document.querySelector("section.input textarea");
 const submitVazio = document.querySelector("section.submit-vazio");
 const submitCont = document.querySelector("section.submit-conteudo");
 const bntCopiar = document.querySelector("section.submit-conteudo button");
@@ -153,7 +155,15 @@ let exibe_texto = document.querySelector("section.submit-conteudo .exibe-texto")
 
 submitCont.style.display = "none";//não aparece o campo que exibe o texto
 
+//validacao do textarea 
 textarea.addEventListener("input", function () {
     verificaTextArea();
+    let valor = this.value;
+    valor = valor.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    valor = valor.toLowerCase();
+    if (!/^[a-z ]+$/.test(valor)) {
+        valor = valor.replace(/[^a-z ]/g, '');
+    }
+    this.value = valor;
 });
 
