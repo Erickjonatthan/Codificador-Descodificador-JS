@@ -115,7 +115,7 @@ main{
   display: block;
   text-align: center;
   color: rgb(197, 98, 85);
-  font-size: 1em;
+  font-size: 20px;
   word-wrap: break-word;
   max-width: 100%;
 }
