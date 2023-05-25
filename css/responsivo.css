@@ -1,48 +1,61 @@
 @media (max-width: 1280px){
-.scroll-to-bottom {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50px;
-    height: 50px;
-    background-color: #555;
-    border-radius: 50%;
-    transition: background-color 0.3s ease;
-}
-
-.scroll-to-bottom:hover {
-    background-color: #777;
-}
-
-.scroll-to-bottom i {
-    color: #fff;
-    font-size: 24px;
-}
 main{
     flex-direction: column;
-    
+    align-items: center;
 }
 header{
   margin-top: 25%;
   margin-bottom: 20%;
 }
+.input,.submit-conteudo, .submit-vazio{
+  margin: 0;
+}
+
 .design_input{
   width: auto;
 }
 
 .submit-conteudo,.submit-vazio{
-  width: 50vw;
-  margin-top: 2em;
-  margin-bottom: 2em;
+  
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+.submit-conteudo{
+  width: 70vw;
+}
+.submit-vazio {
+  padding: 0;
+  width: 90vw;
+  height: 20vh;
+  margin-top: 15%;
+
+}
+.exibe-texto{
+  font-size: 1.5em;
 }
 .options p{
   font-size: 12px;
 }
 .botoes{
+  margin-top: 15%;
   display: flex;
+  flex-direction: column;
+  width: auto;
+
+}
+.btn_codificar,.btn_descodificar{
+  margin: 0;
+  width: 80vw;
+}
+.btn_descodificar{
+  margin-top: 2vh;
+}
+
+.submit-vazio img{
+  display: none;
+}
+.submit-vazio h2{
+  margin: 0;
 }
 footer {
   position:absolute;

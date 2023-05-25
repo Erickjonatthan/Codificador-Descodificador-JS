@@ -1,6 +1,6 @@
 body {
-  background: linear-gradient(to bottom, white, gray);
   font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, white, gray);
 }
 
 header{
@@ -13,76 +13,79 @@ header img{
 }
 main{
   display: flex;
-  justify-content: space-evenly;
-  align-items: center; 
+  justify-content:space-between;
 }
 .input{
-  width: 50vw;  
+  width: 35vw;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   flex-direction: column;
+  margin-left: 20vw;
 }
 .design_input {
   background-color: transparent;
   border: none;
-  width:400px;
+  width: 100%;
   height:250px;
   font-size: 25px;
   color: rgb(197, 98, 85);
   padding: 5px;
   outline: none;
+  margin-top: 20%;
 }
 .design_input::placeholder {
   color: rgb(197, 98, 85);
   font-size: 25px;
 }
-.options{
-  margin-top: 30%;
+.botoes{
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
 }
-.options p{
-  font-size: 15px;
-  margin-bottom: 20px;
-  font-weight: bold;
-}
+
 @keyframes pulsar {
   0% {
     transform: scale(1);
   }
   50% {
-    transform: scale(1.2);
+    transform: scale(1.1);
   }
   100% {
     transform: scale(1);
   }
 }
-.btn_codificar{
-  margin-right: 25px;
-}
-.btn_codificar,.btn_copiar {
-  width: 128px;
+
+.btn_codificar,.btn_copiar,.btn_descodificar {
   height: 50px;
-  background: rgba(229, 101, 84, 0.9);
-  border: rgba(214, 154, 147, 0.9)  solid 2px ;
-  border-radius: 24px;
-  color: white;
   cursor: pointer;
-  
-  
-}
-.btn_descodificar {
-  cursor: pointer;
-  width: 128px;
-  height: 50px;
-  background: rgb(232, 222, 216);
-  border: rgba(212, 183, 179, 0.9)  solid 2px ;
-  border-radius: 24px;
-  color: black;
+  border-radius: 24px; 
 }
 
+.btn_codificar, .btn_descodificar{
+  width: 50%;
+}
+
+.btn_codificar,.btn_copiar {
+  
+  background: rgba(229, 101, 84, 0.9);
+  border: rgba(214, 154, 147, 0.9) solid 2px;
+  color: white;
+}
+.btn_codificar {
+  margin-right: 25px;
+}
+.btn_descodificar {
+  background: rgb(232, 222, 216);
+  border: rgba(212, 183, 179, 0.9)  solid 2px ;
+  color: black;
+}
+.btn_copiar {
+  width: 15em;
+  padding: 10px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  animation: pulsar 1.5s ease-in-out infinite;
+}
 .btn_codificar:hover,.btn_descodificar:hover{
   animation: pulsar 1.5s ease-in-out infinite;
 }
@@ -98,6 +101,7 @@ main{
   box-shadow: 0px 0px 20px 4px rgba(229, 101, 84, 0.9);
   border-radius: 32px;
   padding: 40px 40px 0 40px;
+  margin-right: 2em;
   
 }
 .submit-conteudo{  
@@ -115,12 +119,7 @@ main{
   word-wrap: break-word;
   max-width: 100%;
 }
-.btn_copiar{
-  padding: 10px;
-  margin-top: 15px;
-  margin-bottom: 10px;
-  animation: pulsar 1.5s ease-in-out infinite;
-}
+
 @keyframes tremer {
   0% { transform: translate(0, 0); }
   20% { transform: translate(-2px, -2px) rotate(-1deg); }

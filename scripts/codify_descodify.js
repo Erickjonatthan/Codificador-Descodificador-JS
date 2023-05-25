@@ -75,7 +75,6 @@ function codificar() {
         }
 
         exibe(novaFrase);
-        textarea.value = '';
     }
     else{
         submitVazio.classList.add("tremer");
@@ -98,7 +97,6 @@ function descodificar() {
             .replace(/ober/g, "o")
             .replace(/ufat/g, "u");
         exibe(novaFrase);
-        textarea.value = '';
     }
     else {
         submitVazio.classList.add("tremer");
@@ -124,15 +122,27 @@ function copiar() {
     
 }
 
-
-// adiciona uma seta para descer a pag
-const arrow = document.querySelector('.scroll-to-bottom');
-arrow.addEventListener('click', () => {
-    window.scrollTo({
-        top: document.body.scrollHeight,
-        behavior: 'smooth'
+if (/Mobi|Android/i.test(navigator.userAgent)) {
+    document.querySelector('textarea').addEventListener('input', function () {
+        this.style.height = '200px';
+        this.style.height = (this.scrollHeight) + 'px';
     });
-});
+
+    var observer = new MutationObserver(function (mutations) {
+        mutations.forEach(function (mutation) {
+            if (mutation.type == "childList") {
+                var contentDiv = document.querySelector('section.submit-conteudo');
+                var textDiv = document.querySelector('section.submit-conteudo .exibe-texto');
+                contentDiv.style.height = textDiv.scrollHeight + "%";
+            }
+        });
+    });
+
+    var config = { childList: true };
+    var target = document.querySelector('section.submit-conteudo .exibe-texto');
+    observer.observe(target, config);
+}
+
 
 
 const textarea = document.querySelector("section.input textarea");
